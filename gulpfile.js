@@ -29,7 +29,7 @@ gulp.task('browserSync', function() {
 gulp.task('less', function () {
     gulp.src(csspath + '/global.less')
     .pipe(less({
-      paths: [ path.join(__dirname, 'base', 'modules', 'partials') ]
+      paths: [ path.join(__dirname, 'base', 'components', 'modules', 'partials', 'print') ]
     }))
     .pipe( uglifycss( {"maxLineLen": 640} ) )
     .pipe(gulp.dest(csspath + '/min/', {overwrite: true} ))

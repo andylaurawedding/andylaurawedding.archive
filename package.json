@@ -20,12 +20,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/scottify/scottify.github.io.git"
+    "url": "git+https://github.com/andylaurawedding/andylaurawedding.github.io.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/scottify/scottify.github.io/issues"
+    "url": "https://github.com/andylaurawedding/andylaurawedding.github.io/issues"
   },
-  "homepage": "https://github.com/scottify/scottify.github.io#readme"
+  "homepage": "https://github.com/andylaurawedding/andylaurawedding.github.io#readme"
 }

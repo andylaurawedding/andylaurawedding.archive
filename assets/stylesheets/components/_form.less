@@ -1,0 +1,177 @@
+/*------------------------------------------------------------------------*\
+
+    Code Section: Forms
+    --------------------
+    This is used for setting the styling for form elements
+
+\*------------------------------------------------------------------------*/
+
+@input-height: 42px; /* Set height for input fields */
+@input-border: 1px; /* Set border size for input fields */
+@input-padding: 0; /* Set default padding for all input fields - top and bottom not needed as line-height set */
+@input-padding-icon: @input-padding-side + 12px + @input-padding-side; /* Set padding for when icons are present for input fields */
+@input-padding-side: 12px; /* Set side padding for all input fields - opposite side to icon */
+@input-margin-outer-top: 8px; /* Set top spacing for input fields */
+@input-margin-outer-bottom: 20px; /* Set bottom spacing for input fields */
+
+.input {
+	display: block;
+	background: @white;
+	border: @input-border solid @border;
+	.border-radius(3px);
+	color: @paragraph;
+	font-size: 1.4rem;
+	line-height: @input-height;
+	font-weight: normal;
+	padding: @input-padding @input-padding-icon @input-padding @input-padding-side;
+	vertical-align: middle;
+	width: 100%;
+	-webkit-appearance: none; 
+	
+	.lt-ie10 &, .gt-ie9 & {
+		height: @input-height;
+	}
+
+}
+
+label {
+	.inline-block;
+	font-size: 1.4rem;
+	font-weight: bold;
+	line-height: 20px;
+	
+	&.required {
+		background: url(../../images/forms/elements/required@2x.png) no-repeat right 2px;
+		.lt-ie9 & {background-image: url(../../images/forms/elements/required.png);}
+		background-size: 5px 4px;
+		padding-right: 7px;
+	}
+
+}
+
+input[type=text],
+input[type=tel],
+input[type=email],
+input[type=password],
+textarea {
+	.input;
+}
+
+textarea  {
+	resize: vertical;
+}
+
+/* Custom dropdown */
+
+select {
+	.input;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-ms-appearance: none;
+ 	-o-appearance: none;
+    appearance: none;
+	background-image: url(../../images/forms/elements/dropdown@2x.png);
+	.lt-ie9 & {background-image: url(../../images/forms/elements/dropdown.png);}
+	background-position: right @input-padding-side center;
+	background-repeat: no-repeat;
+	background-size: auto 12px;
+	cursor: pointer;
+	height: @input-height;
+	letter-spacing: 0;
+	max-width: 100%;
+	padding: @input-padding @input-padding-icon @input-padding @input-padding-side - 4px;
+
+	&::-ms-expand {
+	    display: none;
+	}
+
+	.lt-ie10 & {
+		background-image: none;
+		padding-right: 0;
+	}
+
+	.lt-ie9 & {
+		padding-top: @input-padding-side;
+		padding-right: @input-padding-side;
+		padding-bottom: @input-padding-side;
+		height: auto;
+	}
+
+}
+
+/* Radio/Checkkbox */
+
+input[type=radio], input[type=checkbox] {
+	display: none;
+	margin: -4px 8px 0 0;
+
+	.lt-ie9 & {
+		display: inline;
+		margin-top: 0;
+	}
+
+}
+
+input[type=radio] ~ *, input[type=checkbox] ~ * { 
+	background-repeat: no-repeat;
+	background-size: 22px 22px;
+	background-position: left top;
+	cursor: pointer;
+	.inline-block;
+	min-height: 22px;
+	padding: 0 0 0 32px;
+	vertical-align: middle;
+
+	.lt-ie9 & {
+		background: none;
+		display: inline;
+		padding: 0; 
+	}
+
+}
+
+input[type=radio]:checked ~ *, input[type=checkbox]:checked ~ * { 
+	background-size: 22px 22px;
+	background-position: left top;
+
+	.lt-ie9 & {
+		background: none; 
+	}
+
+} 
+
+input[type=radio] ~ * {
+	background-image: url(../../images/forms/elements/radio@2x.png);
+	.lt-ie9 & { background-image: url(../../images/forms/elements/radio.png); }
+}
+
+input[type=radio]:checked ~ * {
+	background-image: url(../../images/forms/elements/radio.checked@2x.png);
+	.lt-ie9 & { background-image: url(../../images/forms/elements/radio.checked.png); }
+}
+
+input[type=checkbox] ~ * {
+	background-image: url(../../images/forms/elements/checkbox@2x.png);
+	.lt-ie9 & { background-image: url(../../images/forms/elements/checkbox.png); }
+}
+
+input[type=checkbox]:checked ~ * {
+	background-image: url(../../images/forms/elements/checkbox.checked@2x.png);
+	.lt-ie9 & { background-image: url(../../images/forms/elements/checkbox.checked.png); }
+}
+
+/* Submit button */
+
+input[type=submit],
+input[type=button] {
+	.button;
+	
+	&:disabled {
+		background-color: darken(@panel,20%);
+	}
+
+	@media only screen and (max-width: @small-break) {
+		width: 100%;
+	}
+	
+}

@@ -1,12 +1,225 @@
 /*------------------------------------------------------------------------*\
-	Code Section: Background Section
+
+    Code Section: Main
+    -------------------
+    This is used for setting styling for the main body
+
 \*------------------------------------------------------------------------*/
 
 #main {
-	padding: 60px 0;
 
-	@media (max-width: @tablet-break) {
-		padding: 20px;
+	section {
+		border-bottom: @paragraph 3px dotted;
+		padding: 40px 0;
+		text-align: center;
+
+		&:last-child {
+			border: none;
+		}
+
+		.container {
+			padding: 24px 0;
+
+			[class*='icon-'] {
+				font-size: 5.4rem;
+			}
+
+			h2 {
+				margin-top: 8px;
+				margin-bottom: 24px;
+			}
+
+			h3 {
+				margin-bottom: 18px;
+			}
+
+			p {
+				margin-bottom: 24px;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+
+			}
+
+			a {
+				color: @primary;
+			}
+
+			ul {
+				font-style: normal;
+				text-align: left;
+
+				li {
+
+					strong {
+						display: block;
+						font-size: 1.2rem;
+						line-height: 1.4rem;
+					}
+
+				}
+
+			}
+
+		}
+
 	}
-	
+
+	#wedding {
+
+		.container {
+			width: 840px;
+
+			&.title {
+				padding: 0 0 32px;
+
+				h2 {
+					font-size: 2.4rem;
+					margin-bottom: 8px;
+				}
+
+				p {
+					font-size: 3.2rem;
+					margin-bottom: 24px;
+				}
+
+			}
+
+			&.primary,
+			&.secondary {
+
+				[class*='icon-'] {
+					font-size: 3.6rem !important;
+				}
+
+				h3 {
+					font-size: 1.4rem;
+					margin-bottom: 0;
+				}
+
+				p {
+					font-size: 2.4rem;
+					font-style: normal;
+				}
+
+			}
+
+
+		}
+
+	}
+
+	#rsvp {
+
+		.container {
+			width: 640px;
+		}
+
+	}
+
+	#gifts {
+
+		.container {
+			width: 640px;
+		}
+
+	}
+
+	#accomodation {
+
+		.container {
+			
+			&.primary {
+				padding-bottom: 48px;
+				width: 720px;
+
+				ul {
+					text-align: center;
+
+					li {
+						float: left;
+						padding: 0;
+						width: 33%;
+
+						&.distance {
+							padding: 12px 0 0;
+							width: 100%;
+						}
+
+					}
+
+				}
+
+			}
+
+			&.secondary {
+				text-align: left;
+
+				.item {
+					padding-left: 48px;
+				}
+
+			}
+
+		}
+
+	}
+
+	#taxi {
+
+		.container {
+			width: 640px;
+
+			&.primary {
+				text-align: left;
+
+				.item {
+					padding-left: 64px;
+				}
+
+			}
+
+
+		}
+
+	}
+
+	#travel {
+
+		.container {
+			width: 840px;
+
+			&.primary {
+				text-align: left;
+				
+				.item {
+					padding-right: 24px;
+
+					&:last-child {
+						padding-right: 0;
+						padding-left: 24px;
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+	#additional {
+
+		.container {
+			width: 640px;
+
+			p {
+				margin-bottom: 48px;
+			}
+
+		}
+
+	}
+
 }

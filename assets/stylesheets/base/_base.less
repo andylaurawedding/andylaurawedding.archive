@@ -1,5 +1,9 @@
 /*------------------------------------------------------------------------*\
-	Code Section: Base Elements
+
+	Code Section: Base
+	-------------------
+	This is used for setting base styling for the page
+
 \*------------------------------------------------------------------------*/
 
 html {
@@ -9,8 +13,8 @@ html {
 }
 
 body {
-	background-color: @white;
 	overflow: hidden;
+	width: 100%;
 }
 
 ::selection {
@@ -26,35 +30,27 @@ body {
 #page {
 	.box-sizing;
 	color: @paragraph;
-	.body-font;
+	.body-font; 
 	font-size: 1.6rem;
 	line-height: 2.4rem;
-	letter-spacing: 0.5px;
 	word-spacing: auto;
 	word-wrap: break-word;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	text-align: center; 
 	text-rendering: optimizeLegibility; 
-
-	@media (max-width: @tablet-break) {
-		text-align: left;
-	}
 
 	*, *:before, *:after {
 		box-sizing: inherit;
 	}
+	
+	.success {
+		color: @success;
+		font-weight: bold;
+	}
 
-	img {
-		border: none;
-		height: auto;
-		width: auto;
-	  	max-width: 100%;
-
-	  	.lt-ie9 & {
-	  		width: auto;
-	  	}
-
+	.error, .ccm-error, .errors {
+		color: @error;
+		font-weight: bold; 
 	}
 
 }

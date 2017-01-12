@@ -1,102 +1,114 @@
 /*------------------------------------------------------------------------*\
-	Code Section: Grid Elements
+
+	Code Section: Grid
+	-------------------
+	This is used for setting the grid
+
 \*------------------------------------------------------------------------*/
 
-.mobile-grid {
-
-	@media (max-width: @mobile-break) {
-		float: none;
-		width: 98%;
-	}
-
-}
-
-.row {
+.container {
 	.clearfix;
 	margin: 0 auto;
+	padding: 0 10px;
 	position: relative;
-    padding: 0 10px;
-    width: 1080px;
+	max-width: 1040px;
 
-	@media (max-width: @desktop-break) {
+	.item {
+		float: left;
+		padding: 0 10px;
 		width: 100%;
+
+		@media only screen and (max-width: @extra-small-break) {
+			float: none;
+		}
+
 	}
 
-	.columns {		
-		float: left;
-		margin: 0 1%;
-		width: 98%;
+	&.two > .item { 
+		width: 50%; 
+	}
 
-		.arabic & {
-			float: right;
+	&.three > .item {
+		width: 33.33%;
+	}
+
+	&.four > .item {
+		width: 25%;
+	}
+
+	&.six > .item {
+		width: 16.6666667%;
+	}
+
+	&.right-sidebar > .item {
+		width: 33.33%;
+
+		&:first-child {
+			width: 66.66%;
 		}
+
+	}
+
+	&.left-sidebar > .item {
+		width: 66.66%;
+
+		&:first-child {
+			width: 33.33%;
+		}
+
+	}
+
+	.item,
+	&.two > .item, 
+	&.three > .item, 
+	&.four > .item, 
+	&.six > .item,
+	&.right-sidebar > .item, 
+	&.left-sidebar > .item {
 		
-		&.centered {
+		@media only screen and (max-width: @extra-small-break) {
+			width: 98%;
+		}
+
+	}
+
+	@supports (display: flex) {
+		.flexbox;
+		.justify-content(space-around);
+
+		@media only screen and (max-width: @small-break) {
+			display: block;
+		}
+
+		.item {
+			flex: 1;
 			float: none;
-			margin: 0 auto;
-		}
-		
-		&.col-1 {
-			width: 7.33%;
-			.mobile-grid;
 		}
 
-		&.col-2 {
-			width: 14.66%;
+		&.right-sidebar > .item  {
 
-			@media (max-width: @tablet-break) {
-				width: 31.33%;
-			}
-
-			@media (max-width: @mobile-break) {
-				width: 48%;
+			&:first-of-type {
+				flex: 2;
 			}
 
 		}
 
-		&.col-3 {
-			width: 23%;
-			.mobile-grid;
+		&.left-sidebar > .item  {
 
-			@media (max-width: @tablet-break) {
-				width: 48%;
+			&:last-of-type {
+				flex: 2;
 			}
 
 		}
 
-		&.col-4 {
-			width: 31.33%;
-			.mobile-grid;
-		}
-		
-		&.col-5 {
-			width: 40.16%;
-			.mobile-grid;
-		}
-
-		&.col-6 {
-			width: 48%;
-			.mobile-grid;
-		}
-		
-		&.col-7 {
-			width: 55.84%;
-			.mobile-grid;
-		}
-
-		&.col-8 {
-			width: 64.66%;
-			.mobile-grid;
-		}
-		
-		&.col-9 {
-			width: 73%;
-			.mobile-grid;
-		}
-		
-		&.col-10 {
-			width: 81.34%;
-			.mobile-grid;
+		.item,
+		&.two > .item, 
+		&.three > .item, 
+		&.four > .item, 
+		&.six > .item,
+		&.right-sidebar > .item, 
+		&.left-sidebar > .item {
+			width: auto;
 		}
 
 	}

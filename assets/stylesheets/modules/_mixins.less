@@ -1,6 +1,19 @@
 /*------------------------------------------------------------------------*\
-	Code Section: Custom Mixins
+
+    Code Section: Mixins
+    ---------------------
+    This is used for setting mixins for use in the project
+
 \*------------------------------------------------------------------------*/
+
+.spacing {
+	margin-bottom: @default-margin;
+	
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+}
 
 .inline-block {
 	display: inline-block;
@@ -93,6 +106,31 @@
 	-webkit-opacity: @opacity;
 	-moz-opacity: @opacity;
 	opacity: @opacity;
+}
+
+.flexbox {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+}
+
+.flex-flow(@string) {
+	-webkit-flex-flow: @string;
+	-moz-flex-flow: @string;
+	-ms-flex-flow: @string;
+	flex-flow: @string;
+}
+
+.align-items(@string) {
+	align-items: @string;
+	-webkit-align-items: @string;
+}
+
+.justify-content(@string) {
+	justify-content: @string;
+	-webkit-justify-content: @string;
 }
 
 .gradient (@startColor: #eee, @endColor: white) {
