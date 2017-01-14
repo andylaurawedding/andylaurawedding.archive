@@ -37,11 +37,11 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote, address, img, table {
 
 h1, h2, h3, h4, h5, h6 {
 	.heading-font;
-	color: inherit;
+	color: @title;
 
 
 	small {
-		color: @primary;
+		color: @subtitle;
 		font-size: 75%;
 	}
 
@@ -100,6 +100,11 @@ ul, ol {
 		font-size: 1.6rem;
 		line-height: 2.4rem;
 		margin-bottom: @default-margin / 2;
+
+		@media only screen and (max-width: @small-break) {
+			margin-bottom: 18px;
+		}
+
 	}
 
 	&.unstyled {

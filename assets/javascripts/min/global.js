@@ -1,0 +1,1 @@
+$(document).ready(function(){$('a[href^="#"]').not(".static").on("click",function(t){t.preventDefault();var o=this.hash,n=$(o);$("html, body").stop().animate({scrollTop:n.offset().top},900,"swing")})});
