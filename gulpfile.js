@@ -20,7 +20,7 @@ var gulp = require('gulp'),
 
 gulp.task('browserSync', function() {
     browserSync.init({
-        proxy: "andylaurawedding.loc"
+        proxy: "wedding.loc"
     })
 })
 

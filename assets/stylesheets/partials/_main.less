@@ -9,7 +9,7 @@
 #main {
 
 	section {
-		border-bottom: @border 3px dotted;
+		border-bottom: @border 1px dashed;
 		padding: 40px 0;
 		text-align: center;
 
@@ -47,7 +47,7 @@
 			}
 
 			[class*='icon-'] {
-				color: @title;
+				color: @subtitle;
 				font-size: 5.4rem;
 
 				@media only screen and (max-width: @small-break) {
@@ -76,6 +76,11 @@
 
 			a {
 				color: @primary;
+
+				&:hover {
+					text-decoration: none;
+				}
+
 			}
 
 			img {
@@ -120,11 +125,11 @@
 				}
 
 				h2 {
-					font-size: 2.4rem;
+					font-size: 4.8rem;
 					margin-bottom: 8px;
 
 					@media only screen and (max-width: @small-break) {
-						font-size: 2rem;
+						font-size: 3rem;
 					}
 
 				}
@@ -160,7 +165,8 @@
 				}
 
 				h3 {
-					font-size: 1.4rem;
+					color: @title;
+					font-size: 2.4rem;
 					margin-bottom: 0;
 				}
 
@@ -219,6 +225,7 @@
 
 					@media only screen and (max-width: @extra-small-break) {
 						height: 1320px;
+						margin: 0 -20px;
 					}
 
 				}
@@ -398,8 +405,16 @@
 				padding-bottom: 0;
 			}
 
-			p {
-				margin-bottom: 48px;
+			&.primary {
+
+				p {
+					margin-bottom: 48px;
+				}
+
+				[class*='icon-'] {
+					color: @title;
+				}
+
 			}
 
 		}
